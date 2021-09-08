@@ -128,7 +128,7 @@ class ProfileFragment : Fragment() {
 
                 withContext(Dispatchers.IO) {
                     client.newCall(request).execute().use { response ->
-                        if (!response.isSuccessful) throw IOException("Unexpected code $response")
+//                        if (!response.isSuccessful) throw IOException("Unexpected code $response")
                     }
                     setPic()
                 }
@@ -292,7 +292,7 @@ class ProfileFragment : Fragment() {
                         withContext(Dispatchers.IO) {
                             client.newCall(request).execute().use { response ->
                                 if (!response.isSuccessful){
-                                    throw IOException("Here! Unexpected code $response")
+//                                    throw IOException("Here! Unexpected code $response")
                                 }
                                 val moshi = Moshi.Builder()
                                     .addLast(KotlinJsonAdapterFactory())
@@ -320,7 +320,7 @@ class ProfileFragment : Fragment() {
                         withContext(Dispatchers.IO) {
                             client.newCall(request).execute().use { response ->
                                 if (!response.isSuccessful) {
-                                    throw IOException("Here2! Unexpected code $response")
+//                                    throw IOException("Here2! Unexpected code $response")
                                 }
                             }
                         }
@@ -345,7 +345,7 @@ class ProfileFragment : Fragment() {
 
             withContext(Dispatchers.IO) {
                 client.newCall(request).execute().use { response ->
-                    if (!response.isSuccessful) throw IOException("Unexpected code $response")
+//                    if (!response.isSuccessful) throw IOException("Unexpected code $response")
                 }
             }
         }

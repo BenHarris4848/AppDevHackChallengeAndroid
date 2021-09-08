@@ -99,7 +99,7 @@ class NewChallengeFragment : Fragment() {
 
             withContext(Dispatchers.IO) {
                 client.newCall(request).execute().use { response ->
-                    if (!response.isSuccessful) throw IOException("Unexpected code $response")
+//                    if (!response.isSuccessful) throw IOException("Unexpected code $response")
                 }
             }
         }

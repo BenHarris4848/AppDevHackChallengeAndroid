@@ -50,14 +50,14 @@ class HomeFragment : Fragment() {
         currentChallengeRecyclerView  = root.findViewById(R.id.curr_challenges)
         currentChallengeLayoutManager= LinearLayoutManager(root.context, LinearLayoutManager.HORIZONTAL, false)
         currentChallengeRecyclerView.layoutManager=currentChallengeLayoutManager
-        getcurrentChallengeList()
+//        getcurrentChallengeList() // COMMENTED OUT FOR DISPLAY
         currentChallengeAdapter = ChallengeAdapter(currChallengeDataSet,false, true,fragmentManager)
         currentChallengeRecyclerView.adapter=currentChallengeAdapter
 
         pastChallengeRecyclerView=root.findViewById(R.id.past_challenges)
         pastChallengeLayoutManager = LinearLayoutManager(root.context)
         pastChallengeRecyclerView.layoutManager=pastChallengeLayoutManager
-        getPastChallenges()
+//        getPastChallenges() // COMMENTED OUT FOR DISPLAY
         pastChallengeAdapter=ChallengeAdapter(pastChallengeDataSet,true, false,fragmentManager)
         pastChallengeRecyclerView.adapter=pastChallengeAdapter
 
@@ -98,7 +98,7 @@ class HomeFragment : Fragment() {
 
             withContext(Dispatchers.IO) {
                 client.newCall(request).execute().use { response ->
-                    if (!response.isSuccessful) throw IOException("Unexpected code $response")
+//                    if (!response.isSuccessful) throw IOException("Unexpected code $response")
 
                     val moshi = Moshi.Builder()
                             .addLast(KotlinJsonAdapterFactory())
@@ -125,7 +125,7 @@ class HomeFragment : Fragment() {
 
             withContext(Dispatchers.IO) {
                 client.newCall(request).execute().use { response ->
-                    if (!response.isSuccessful) throw IOException("Unexpected code $response")
+//                    if (!response.isSuccessful) throw IOException("Unexpected code $response")
 
                     val moshi = Moshi.Builder()
                             .addLast(KotlinJsonAdapterFactory())

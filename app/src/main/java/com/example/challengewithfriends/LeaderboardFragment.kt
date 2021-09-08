@@ -41,11 +41,11 @@ class LeaderboardFragment : Fragment() {
         val root:View =  inflater.inflate(R.layout.fragment_leaderboard, container, false)
         val sharedPref = activity?.getSharedPreferences("User Info", Context.MODE_PRIVATE)
         playerID=sharedPref?.getInt("playerID",0)
-        getGroups()
+//        getGroups()  // COMMENTED OUT FOR DISPLAY
         leaderborardRecyclerView=root.findViewById(R.id.leaderboard_recycler)
         leaderboardLayoutManager= LinearLayoutManager(root.context)
         leaderborardRecyclerView.layoutManager=leaderboardLayoutManager
-        getLeaderboard("Global")
+//        getLeaderboard("Global")  // COMMENTED OUT FOR DISPLAY
         leaderborardAdapter=LeaderboardAdapter(leaderboardDataSet)
         leaderborardRecyclerView.adapter=leaderborardAdapter
         return root
@@ -88,7 +88,7 @@ class LeaderboardFragment : Fragment() {
 
             withContext(Dispatchers.IO) {
                 client.newCall(request).execute().use { response ->
-                    if (!response.isSuccessful) throw IOException("Unexpected code $response")
+//                    if (!response.isSuccessful) throw IOException("Unexpected code $response")
 
                     val moshi = Moshi.Builder()
                         .addLast(KotlinJsonAdapterFactory())
